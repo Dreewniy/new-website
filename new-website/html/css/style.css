@@ -1,0 +1,64 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(../img/bg.jpg);
+  background-size: 50px;
+  color: #fafafa;
+  font-family: raleway-c;
+  overflow-x: hidden;
+}
+
+.main-header{
+  height: 100vh;
+}
+
+:root{
+  --index: calc(1vw + 1vh);
+  --color-header: #f4efec;;
+  --color-text: #cdc6c3;
+}
+
+@font-face {
+  font-family: raleway-c;
+  src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+  font-family: outfit-c;
+  src: url(../fonts/outfit-regular.woff2);
+}
+
+.hero{
+  width: calc(var(--index) * 36);
+  position: absolute;
+  left: 37vw;
+  top: 8vh;
+  z-index: -1;
+}
+
+.container{
+  padding: 0 7vw;
+}
+
+.main-title{
+  font-size: calc(var(--index) * 8);
+  position: absolute;
+  width: min-content;
+  bottom: 12vh;
+  line-height: .9;
+}
+
+.gallery{
+  display: flex;
+}
+
+.gallery > *{
+  flex: 1;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
