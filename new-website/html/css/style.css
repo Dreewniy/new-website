@@ -12,14 +12,22 @@ body{
   overflow-x: hidden;
 }
 
+/*wille change*/
+.hero, .content, .gallery > *{
+  will-change: transform;
+}
+
+
 .main-header{
   height: 100vh;
+  position: fixed;
 }
 
 :root{
   --index: calc(1vw + 1vh);
   --color-header: #f4efec;;
   --color-text: #cdc6c3;
+  --gallery-gap: calc(var(--index) * 10)
 }
 
 @font-face {
@@ -33,8 +41,8 @@ body{
 }
 
 .hero{
-  width: calc(var(--index) * 36);
   position: absolute;
+  width: calc(var(--index) * 36);
   left: 37vw;
   top: 8vh;
   z-index: -1;
@@ -46,14 +54,15 @@ body{
 
 .main-title{
   font-size: calc(var(--index) * 8);
-  position: absolute;
   width: min-content;
   bottom: 12vh;
   line-height: .9;
+  margin-top: calc(var(--gallery-gap));
 }
 
 .gallery{
   display: flex;
+  padding: calc(var(--index) * 30) 0;
 }
 
 .gallery > *{
@@ -61,4 +70,36 @@ body{
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.gallery__item{
+  max-width: calc(var(--index) * 21);
+  margin-bottom: calc(var(--gallery-gap));
+  max-height: 180vh;
+  border-radius: 8px;
+}
+
+.gallery__left {
+  margin-top: calc(var(--gallery-gap) * 1.7);
+}
+
+.gallery__right .gallery__item{
+  margin: 0;
+  margin-top: calc(var(--gallery-gap));
+}
+
+.text-block{
+  color: var(--color-text);
+  position: relative;
+}
+
+.text-block__h{
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--color-header);
+  margin-bottom: 1.5rem;
+}
+
+.text-block__p{
+  line-height: 1.75;
 }
